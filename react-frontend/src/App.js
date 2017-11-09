@@ -1,7 +1,9 @@
 import React from 'react';
-
+import selfie from 'img/portrett_small.jpg';
+import expressIcon from 'img/express_icon.png';
+import expressNode from 'img/express.jpg';
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Route,
     Link
 } from 'react-router-dom';
@@ -23,7 +25,7 @@ const Layout = () => (
     <Router>
         <div>
             <div className="site-header">
-                <img id="icon" alt="express icon" src="/img/express_icon.png" />
+                <img id="icon" alt="express icon" src={expressIcon} />
                 <navbar className="site-navbar">
                     <nav>
                         <ul>
@@ -52,7 +54,7 @@ const Home = () => (
     <div>
         <h1>Hem</h1>
         <p>Jag som skapat sidan heter Marcus.</p>
-        <img id="portrait" alt="marcus" src="/img/portrett_small.jpg" />
+        <img id="portrait" alt="marcus" src={selfie} />
     </div>
 );
 
@@ -62,7 +64,7 @@ const About = () => (
         <p>Den här sidan har gjorts med hjälp av Express.js,
              vilket skapar en server för back-end tillsammans
              med React.js som sköter om front-end.</p>
-        <img id="express" alt="Express and Node" src="/img/express.jpg"/>
+        <img id="express" alt="Express and Node" src={expressNode}/>
         <p>Koden består av 2 repo och finns på Github</p>
         <a href="https://github.com/marcusgsta/express-backend">Express-backend</a>
         <a href="https://github.com/marcusgsta/react-frontend">React-frontend</a>

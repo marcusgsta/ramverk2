@@ -12,7 +12,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // Serve static files
-var staticFiles = path.join(__dirname, "public");
+// var staticFiles = path.join(__dirname, "public");
+var staticFiles = path.join(__dirname, "../react-frontend/build");
 
 app.use(express.static(staticFiles));
 
@@ -28,6 +29,12 @@ if (app.get('env') === 'development') {
 }
 
 // ROUTES
+// Catch all, send react app via index.html if no previous match
+app.get("/", (req, res, next) => {
+    // Path to index.html in client build directory
+    res.sendFile(path.join(__dirname + '/../react-frontend/build/index.html'));
+});
+
 app.use('/', index);
 app.use('/about', about);
 app.use('/report', report);
@@ -39,6 +46,9 @@ app.use((req, res, next) => {
     err.status = 404;
     next(err);
 });
+
+
+
 app.use((err, req, res, next) => {
     if (res.headersSent) {
         return next(err);
@@ -57,6 +67,7 @@ if (typeof process.env.DBWEBB_PORT !== 'undefined') {
 } else {
     PORT = 1337;
 }
+
 // Start up server
 console.log("Express is listening on port " + PORT);
 app.listen(PORT);

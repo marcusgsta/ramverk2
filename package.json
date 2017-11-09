@@ -4,8 +4,12 @@
   "description": "Me-page with express and react",
   "main": "react-frontend/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start": "node express-backend/index.js",
+    "start-client": "cd react-frontend && npm start",
+    "start-backend": "node express-backend/index.js",
+    "start-dev": "concurrently --kill-others \"npm run start-client\" \"npm run start-backend\"",
+    "install": "cd react-frontend && npm run build"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcusgsta/ramverk2.git"
@@ -40,8 +44,9 @@
     "stylelint-config-recommended-scss": "^2.0.0",
     "stylelint-scss": "^2.1.0",
     "ajv": "5.0.3-beta.0"
-    },
-    "dependencies": {
+  },
+  "dependencies": {
+    "concurrently": "^3.5.0",
     "express": "^4.16.2",
     "jstransformer-markdown-it": "^2.0.0",
     "pug": "^2.0.0-rc.4",
