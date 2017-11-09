@@ -1,33 +1,18 @@
 language: node_js
+
 node_js:
-  - "iojs"
-  - "7"
-
-
+    - "node"
+    - "8"
+    - "7"
 
 sudo: false
-
-
 
 git:
     submodules: false
 
-
-
-addons:
-    apt:
-        packages:
-            #- php-codesniffer
-            #- phpmd
-            #- shellcheck
-
-
-
 before_script:
     # Prepare for automated tests
-    - make install
-
-
+    - npm install
 
 script:
     # Run tests
