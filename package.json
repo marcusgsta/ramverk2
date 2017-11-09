@@ -1,6 +1,6 @@
 {
   "name": "ramverk2",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Me-page with express and react",
   "main": "react-frontend/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "start-backend": "node express-backend/index.js",
     "start-dev": "concurrently --kill-others \"npm run start-client\" \"npm run start-backend\"",
     "install": "cd react-frontend && npm install && npm run build"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcusgsta/ramverk2.git"
