@@ -2,6 +2,7 @@ import React from 'react';
 import selfie from 'img/portrett_small.jpg';
 import expressIcon from 'img/express_icon.png';
 import expressNode from 'img/express.jpg';
+import report from 'report.js';
 import {
     HashRouter as Router,
     Route,
@@ -71,17 +72,18 @@ const About = () => (
     </div>
 );
 
-const Report = () => (
-    <div>
-        <h2>Redovisningar</h2>
-        <h3>Kmom01</h3>
-        <h3>Kmom02</h3>
-        <h3>Kmom03</h3>
-        <h3>Kmom04</h3>
-        <h3>Kmom05</h3>
-        <h3>Kmom06</h3>
-        <h3>Kmom07-10</h3>
-    </div>
-);
+const Report = report;
+// const Report = () => (
+//     <div>
+//         <h2>Redovisningar</h2>
+//         <h3>Kmom01</h3>
+//         <h3>Kmom02</h3>
+//         <h3>Kmom03</h3>
+//         <h3>Kmom04</h3>
+//         <h3>Kmom05</h3>
+//         <h3>Kmom06</h3>
+//         <h3>Kmom07-10</h3>
+//     </div>
+// );
 
 export default Layout;

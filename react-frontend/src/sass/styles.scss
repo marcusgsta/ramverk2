@@ -2,6 +2,7 @@
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
+$background-color: #fff;
 
 // mixins
 
@@ -60,19 +61,29 @@ nav {
 // Body
 
 body {
-  font: 100% $font-stack;
+  font: 110% $font-stack;
   color: $primary-color;
+  background-color: $background-color;
   width: 80%;
   margin: 0 auto;
   height:800px;
+  clear:both;
+  padding-top:24px;
 }
 
 
-// main
+// .main
 
-body {
-    clear:both;
-    padding-top:24px;
+@media screen and (min-width: 700px) {
+    .main {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main {
+        width: 70%;
+    }
 }
 
 #portrait { @include border-radius(5px); }
