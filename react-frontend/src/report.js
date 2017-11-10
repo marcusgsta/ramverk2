@@ -37,6 +37,22 @@ const Report = () => (
         <p>Jag använder också SASS för CSS-koden, även om jag inte utnyttjar det i så stor grad ännu, bara några variabler för färger. Det var enkelt att installera. En katalog för scss-filen, och en för css, och så använder jag ett watch-process som kompilerar när jag sparar min scss-fil. Snabbt och lätt.</p>
 
         <h3>Kmom02</h3>
+        <p><em>Har du jobbat med Docker eller andra virtualiseringstekniker innan?</em></p>
+
+        <p>Jag har inte jobbar med Docker, men i en tidigare kurs använde vi VirtualBox för att sätta upp ett virtuellt operativsystem. VB var ju spännande på så sätt att jag kunde köra Windows eller Linux på min Mac, för att testa applikationer. Samtidigt var det en resurskrävande teknik, både på hårddisken och för processorn, och ju mer man fyller datorn med detta ju svårare blir det att använda. Jag vill minnas att installationen också var omfattande. </p>
+
+        <p><em>Hur ser du på möjligheterna att använda dig av Docker för att jobba med tester av ditt repo?</em></p>
+
+        <p>Det ser lovande ut. En stor skillnad från VB är att det känns så lättviktigt. Som jag förstår det är det beroendena som knyts upp till utvecklingsmiljön, till skillnad från VM som verkar kräva mycket mer resurser för att fungera och starta upp. Jag ser fram emot att börja använda Docker för att testa program i olika miljöer, och jobba lite mer strukturerat. I synnerhet när man vill sätta upp en professionell testmiljö, för att kunna testa på ett flertal olika miljöer.</p>
+
+        <p>Den stora skillnaden är, som jag förstår det, att Virtual Box simulerar ett helt operativsystem, exempelvis kan jag köra windows i någon version, på en mac. Med Docker kan jag köra program i olika versioner, antingen med mitt macOS som bas, eller tillsammans med Virtual Box och ett virtuellt operativssystem som Windows eller Linux. De båda teknikerna kan användas tillsammans och utfyller varandra.</p>
+
+        <p><em>Gick allt smidigt eller stötte du på problem?</em></p>
+        <p>Det gick någorlunda smidigt. Kanske det var enklare på Mac, läste att det hade varit strul för andra operativsystem. Jag gjorde en <code>docker pull node</code> för att ladda ner node-imagen ifrån docker. Jag skapade tre olika versioner av node, för mitt repo, med hjälp av en docker-compose.yml-fil. För att det ska startas behövde jag lägga in command: <em>npm start</em>. Det som krånglade mest var portarna och hur man skulle skriva detta. Jag googlade runt och hittade en lösning som fungerade. Jag använder DBWEBB_PORT som variabel i <em>environment</em>, sedan 1337:1337 i <em>ports</em>. Jag prövade andra varianter, som att skriva 1337:80, vilket borde betyda att man lyssnar på port 1337 och kör på port 80 i dockercontainern, något som inte fungerar. Det verkar vara något specifikt med node, och kanske med kombinationen med express.js, som kräver att det ska vara samma portnummer både för ens OS och för dockercontainern. Jag får bara acceptera och gå vidare.</p>
+
+        <p><em>Skapade du din egen image, berätta om den?</em></p>
+        <p>Jag väntar med det till nästa kmom.</p>
+
         <h3>Kmom03</h3>
         <h3>Kmom04</h3>
         <h3>Kmom05</h3>
