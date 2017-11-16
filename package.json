@@ -8,7 +8,8 @@
     "start-client": "cd react-frontend && npm start",
     "start-backend": "node express-backend/index.js",
     "start-dev": "concurrently --kill-others \"npm run start-client\" \"npm run start-backend\"",
-    "install": "cd react-frontend && npm install && npm run build"
+    "install": "cd react-frontend && npm install && npm run build",
+    "test": "cd react-frontend && npm test && npm test -- --coverage"
   },
   "repository": {
     "type": "git",

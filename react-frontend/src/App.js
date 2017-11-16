@@ -1,8 +1,8 @@
 import React from 'react';
-import selfie from 'img/portrett_small.jpg';
-import expressIcon from 'img/express_icon.png';
-import expressNode from 'img/express.jpg';
-import report from 'report.js';
+import selfie from './img/portrett_small.jpg';
+import expressIcon from './img/express_icon.png';
+import expressNode from './img/express.jpg';
+import Report from './components/report.js';
 import {
     HashRouter as Router,
     Route,
@@ -72,7 +72,7 @@ const About = () => (
     </div>
 );
 
-const Report = report;
+
 // const Report = () => (
 //     <div>
 //         <h2>Redovisningar</h2>

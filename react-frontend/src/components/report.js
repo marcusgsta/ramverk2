@@ -39,7 +39,7 @@ const Report = () => (
         <h3>Kmom02</h3>
         <p><em>Har du jobbat med Docker eller andra virtualiseringstekniker innan?</em></p>
 
-        <p>Jag har inte jobbar med Docker, men i en tidigare kurs använde vi VirtualBox för att sätta upp ett virtuellt operativsystem. VB var ju spännande på så sätt att jag kunde köra Windows eller Linux på min Mac, för att testa applikationer. Samtidigt var det en resurskrävande teknik, både på hårddisken och för processorn, och ju mer man fyller datorn med detta ju svårare blir det att använda. Jag vill minnas att installationen också var omfattande. </p>
+        <p>Jag har inte jobbat med Docker, men i en tidigare kurs använde vi VirtualBox för att sätta upp ett virtuellt operativsystem. VB var ju spännande på så sätt att jag kunde köra Windows eller Linux på min Mac, för att testa applikationer. Samtidigt var det en resurskrävande teknik, både på hårddisken och för processorn, och ju mer man fyller datorn med detta ju svårare blir det att använda. Jag vill minnas att installationen också var omfattande. </p>
 
         <p><em>Hur ser du på möjligheterna att använda dig av Docker för att jobba med tester av ditt repo?</em></p>
 
@@ -49,6 +49,8 @@ const Report = () => (
 
         <p><em>Gick allt smidigt eller stötte du på problem?</em></p>
         <p>Det gick någorlunda smidigt. Kanske det var enklare på Mac, läste att det hade varit strul för andra operativsystem. Jag gjorde en <code>docker pull node</code> för att ladda ner node-imagen ifrån docker. Jag skapade tre olika versioner av node, för mitt repo, med hjälp av en docker-compose.yml-fil. För att det ska startas behövde jag lägga in command: <em>npm start</em>. Det som krånglade mest var portarna och hur man skulle skriva detta. Jag googlade runt och hittade en lösning som fungerade. Jag använder DBWEBB_PORT som variabel i <em>environment</em>, sedan 1337:1337 i <em>ports</em>. Jag prövade andra varianter, som att skriva 1337:80, vilket borde betyda att man lyssnar på port 1337 och kör på port 80 i dockercontainern, något som inte fungerar. Det verkar vara något specifikt med node, och kanske med kombinationen med express.js, som kräver att det ska vara samma portnummer både för ens OS och för dockercontainern. Jag får bara acceptera och gå vidare.</p>
+
+        <p>Edit: Jag har fått förklarat för mig att porten till höger ska vara porten som Node snurrar på inne i containern. Jag satte därför denna till samma som jag sätter variabeln DBWEBB_PORT i docker-compose-scriptet. Jag måste starta node/express på samma port som den jag uppger till höger i <em>ports</em></p>
 
         <p><em>Skapade du din egen image, berätta om den?</em></p>
         <p>Jag väntar med det till nästa kmom.</p>

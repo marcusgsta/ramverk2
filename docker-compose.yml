@@ -6,11 +6,11 @@ services:
     working_dir: /home/node/app
     environment:
       - NODE_ENV=production
-      - DBWEBB_PORT=1337
+      - DBWEBB_PORT=3000
     volumes:
       - ./:/home/node/app
     ports:
-      - "1337:1337"
+      - "1337:3000"
     command: "npm start"
   node8:
     image: "node:8"
@@ -18,11 +18,11 @@ services:
     working_dir: /home/node/app
     environment:
       - NODE_ENV=production
-      - DBWEBB_PORT=1338
+      - DBWEBB_PORT=3000
     volumes:
       - ./:/home/node/app
     ports:
-      - "1338:1338"
+      - "1338:3000"
     command: "npm start"
   node9:
     image: "node:9"
@@ -30,9 +30,9 @@ services:
     working_dir: /home/node/app
     environment:
       - NODE_ENV=production
-      - DBWEBB_PORT=1339
+      - DBWEBB_PORT=3000
     volumes:
       - ./:/home/node/app
     ports:
-      - "1339:1339"
+      - "1339:3000"
     command: "npm start"
