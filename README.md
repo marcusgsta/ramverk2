@@ -22,6 +22,14 @@ Test repos with
 npm test
 ```
 
+Test repos in different node environments like this:
+```
+npm run test1 # for node 7
+npm run test2 # for node 8
+npm run test3 # for node 9
+```
+This will take some time. When the unit tests are done you will need to press 'Q' to leave the Jest CLI and proceed with code coverage as a last step.
+
 Optional: Set port (default: 1337)
 ```
 DBWEBB_PORT=PORT_NUMBER

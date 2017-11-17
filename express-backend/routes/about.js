@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET about page. */
 
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
     res.render("about", {
         title: "Om",
         message: "Om den här sidan"
