@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   node7:
     image: "node:7"
@@ -12,6 +12,7 @@ services:
     ports:
       - "1337:3000"
     command: "npm start"
+
   node8:
     image: "node:8"
     user: "node"
@@ -24,6 +25,7 @@ services:
     ports:
       - "1338:3000"
     command: "npm start"
+
   node9:
     image: "node:9"
     user: "node"

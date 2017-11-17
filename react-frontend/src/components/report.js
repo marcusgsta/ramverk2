@@ -56,6 +56,8 @@ const Report = () => (
         <p>Jag väntar med det till nästa kmom.</p>
 
         <h3>Kmom03</h3>
+
+        <p>Man startar testerna för de tre olika docker-containrarna med npm run test1, npm run test2 och npm run test3. Då testas applikationen i Node 7, 8 och 9. Obs att det kan ta lite tid. Man behöver också trycka q för att lämna Jests test-cli, och för att sista kommandot som kollar code coverage ska utföras.</p>
         <h3>Kmom04</h3>
         <h3>Kmom05</h3>
         <h3>Kmom06</h3>
