@@ -1,6 +1,6 @@
 {
   "name": "ramverk2",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "Me-page with express and react",
   "main": "react-frontend/index.js",
   "scripts": {
