@@ -57,7 +57,28 @@ const Report = () => (
 
         <h3>Kmom03</h3>
 
-        <p>Man startar testerna för de tre olika docker-containrarna med npm run test1, npm run test2 och npm run test3. Då testas applikationen i Node 7, 8 och 9. Obs att det kan ta lite tid. Man behöver också trycka q för att lämna Jests test-cli, och för att sista kommandot som kollar code coverage ska utföras.</p>
+        <p><em>Berätta vilka tekniker/verktyg du valde för enhetstester och kodtäckning och varför?</em></p>
+
+        <p>Jag använder create-react-app, som scaffoldar fram en hel utvecklingsmiljö, väldigt praktiskt. I denna miljö ingår Jest. Jag lade in några testfiler i formen App.test.js för App.js, vilket innebär att Jest kommer att hitta dem och köra testerna. Testerna är enkla och testar bara att några av mina react-komponenter laddas som de ska utan att krascha. Hur man testar med Jest förklaras utförligt på <a href='https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-test'>Create-React-App README</a> Jest har också en integrerad kodtäckningsrapporterare, vilket funkar fint. Anledningen till att jag valde just Jest var att det redan var integrerat, och det kändes onödigt att införa något annat. I klient/server-appen som jag skapat har jag i tillägg integrerat några tester för mitt express-backend, också med Jest, bara för att sätta upp en testmiljö att gå vidare med.</p>
+
+        <p><em>Berätta om din CI-kedja och reflektera över de valen du gjorde?</em></p>
+
+        <p>Jag kör Travis för build, och Better Code Hub och Scrutinizer för kodtester och –täckning. Jag har testat flera tjänster, men dessa verkar stabila. Dessutom kompletterar Better Code Hub och Scrutinizer varandra, så att jag kan dra lärdomar av varningarna de rapporterar om min kod. Gillar att ha en CI-kedja som testar koden varje gång jag pushar till Github. Det känns som ett steg mot att jobba professionellt med utveckling. Jag utelämnade dock Better Code Hub för klient/server-appen</p>
+
+        <p><em>Reflektera över hur det gick att integrera enhetstesterna i olika Docker-kontainerns och om du ser någon nytta med detta.</em></p>
+
+        <p>Jag försökte att skapa Dockerfiler, men fick inte kläm på det. Kollade lite på andras lösningar, och diskuterade det, men det verkade inte som om man helt behövde det, utan klarade sig med docker-compose.yml-filen. I vilket fall som helst är det den jag använder. Jag lade in nya script i min package.json. Man startar testerna för de tre olika docker-containrarna med npm run test1, npm run test2 och npm run test3. Då testas applikationen i Node 7, 8 och 9. Obs att det kan ta lite tid. Man behöver också trycka q för att lämna Jests test-cli, och för att sista kommandot som kollar code coverage ska utföras. Jag resonerar som så att det viktiga är att testerna körs, och att de körs i olika utvecklingsmiljöer. Om det krävs Dockerfile får jag lägga till det i efterhand.</p>
+
+        <p><em>Hur väl lyckades du utvärdera TDD-konceptet och vilka är dina reflektioner?</em></p>
+
+        <p>För min me-app var ju koden redan skriven och därför var det inte möjligt att börja om med testerna först. Men jag prövade med att först göra en test att en route laddades, köra testen och sedan skapa routen. Huvudsaken är, tänker jag, att man har med sig testandet från början. Att inte skriva en massa kod utan att ha en tanke på hur man ska testa den, utan att jobba lite simultant kanske. Koda på ett sånt sätt att det kommer vara testbart. Jag har heller inte så mycket logik i min app, men lade in en testfunktion som adderar två siffror och gjorde en test på den.</p>
+
+        <p><em>Berätta om tankarna kring din klient/server applikation och nämn de tekniker du använder.</em></p>
+
+        <p>För min klient/server-app valde jag att klona min me-sida och jobba med den i ett nytt repo. Onödigt att uppfinna hjulet på nytt, tänker jag, och tanken hela tiden har varit att jag skulle använda express och react som server och klient, för att se vad den kombinationen kunde erbjuda. Som jag skrev tidigare föreställer jag mig ett black jack-spel eller annan typ av spel, där react skulle vara ett passande val. Inbillar jag mig i varje fall.</p>
+
+        <p>Övrigt: Jag prövar på Patternlab, som är ett komponentbibliotek, kan man säga. <a href='http://demo.patternlab.io/'>Patternlab Demo</a>. Komponenterna delas in i mindre eller större byggstenar, de kallar det atomisk design. Det bygger på SASS, och det är nog meningen att man ska skapa sina egna komponenter, och hela siddesigner, vilka man sedan kan plocka ut och använda i sitt system. Jag lånade till en början en fil med globala variabler, och har börjat använda de förinställda färgerna. Lite för att testa på hur praktiskt det kan vara. Detta kan vara ett alternativ till Bootstrap, tror jag. Man är inte heller beroende av någon extern fil, verkar det som, vilket är ett plus, då man har bättre kontroll över sina beroenden.</p>
+
         <h3>Kmom04</h3>
         <h3>Kmom05</h3>
         <h3>Kmom06</h3>

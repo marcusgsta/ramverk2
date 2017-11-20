@@ -66,9 +66,9 @@ const About = () => (
              vilket skapar en server för back-end tillsammans
              med React.js som sköter om front-end.</p>
         <img id="express" alt="Express and Node" src={expressNode}/>
-        <p>Koden består av 2 repo och finns på Github</p>
-        <a href="https://github.com/marcusgsta/express-backend">Express-backend</a>
-        <a href="https://github.com/marcusgsta/react-frontend">React-frontend</a>
+        <p>Koden finns på Github</p>
+        <a href="https://github.com/marcusgsta/ramverk2">Ramverk2</a>
+
     </div>
 );
 
