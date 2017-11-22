@@ -1,8 +1,15 @@
 import React from 'react';
-import selfie from './img/portrett_small.jpg';
+
+//images
 import expressIcon from './img/express_icon.png';
-import expressNode from './img/express.jpg';
+
+//routes
+import Home from './components/home.js';
+import About from './components/about.js';
 import Report from './components/report.js';
+import LandingPage from './components/landing-page.js';
+
+//router
 import {
     HashRouter as Router,
     Route,
@@ -33,6 +40,7 @@ const Layout = () => (
                             <li><Link to="/">Hem</Link></li>
                             <li><Link to="/om">Om</Link></li>
                             <li><Link to="/report">Redovisningar</Link></li>
+                            <li><Link to="/landing-page">Klient/server-app</Link></li>
                         </ul>
                     </nav>
                 </navbar>
@@ -43,6 +51,7 @@ const Layout = () => (
                 <Route exact path="/" component={Home}/>
                 <Route path="/om" component={About}/>
                 <Route path="/report" component={Report}/>
+                <Route path="/landing-page" component={LandingPage}/>
             </div>
             <div className="site-footer">
                 Copyright (c) by Marcus Gustafsson
@@ -50,40 +59,5 @@ const Layout = () => (
         </div>
     </Router>
 );
-
-const Home = () => (
-    <div>
-        <h1>Hem</h1>
-        <p>Jag som skapat sidan heter Marcus.</p>
-        <img id="portrait" alt="marcus" src={selfie} />
-    </div>
-);
-
-const About = () => (
-    <div>
-        <h2>Om</h2>
-        <p>Den här sidan har gjorts med hjälp av Express.js,
-             vilket skapar en server för back-end tillsammans
-             med React.js som sköter om front-end.</p>
-        <img id="express" alt="Express and Node" src={expressNode}/>
-        <p>Koden finns på Github</p>
-        <a href="https://github.com/marcusgsta/ramverk2">Ramverk2</a>
-
-    </div>
-);
-
-
-// const Report = () => (
-//     <div>
-//         <h2>Redovisningar</h2>
-//         <h3>Kmom01</h3>
-//         <h3>Kmom02</h3>
-//         <h3>Kmom03</h3>
-//         <h3>Kmom04</h3>
-//         <h3>Kmom05</h3>
-//         <h3>Kmom06</h3>
-//         <h3>Kmom07-10</h3>
-//     </div>
-// );
 
 export default Layout;

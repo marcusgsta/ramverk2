@@ -6,6 +6,7 @@ var index = require('./routes/index');
 var about = require('./routes/about');
 var report = require('./routes/report');
 var users = require('./routes/users');
+var landingpage = require('./routes/client-server-app');
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -39,6 +40,7 @@ app.use('/', index);
 app.use('/about', about);
 app.use('/report', report);
 app.use('/users', users);
+app.use('/client-server-app', landingpage);
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
     let err = new Error("Not Found");
