@@ -1,11 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import Chat from './chat';
 
 it('renders without crashing', () => {
-    const div = document.createElement('div');
+    shallow(<Chat />);
+});
 
-    ReactDOM.render(<Chat />, div);
+
+// import App from './App';
+
+it('renders welcome message', () => {
+    const wrapper = shallow(<Chat />);
+    const welcome = <h1>Chat</h1>;
+
+    expect(wrapper.contains(welcome)).toEqual(true);
 });
 
 // describe('updateScroll', () => {
