@@ -8,12 +8,6 @@ const Message = ({message}) => (
     </div>
 );
 
-function updateScroll() {
-    var element = document.querySelector(".messages");
-
-    element.scrollTop = element.scrollHeight;
-}
-
 Message.propTypes = {
     // message: PropTypes.string.isRequired,
     message: PropTypes.object.isRequired
@@ -58,6 +52,13 @@ export class Chat extends Component {
             sendFeedback(data);
             updateScroll();
         });
+
+        const updateScroll = (element=null) => {
+            if (element === null) {
+                element = document.querySelector(".messages");
+            }
+            element.scrollTop = element.scrollHeight;
+        };
 
         const sendFeedback = data => {
             if (this.state.shouldHandleKeyPress === true) {
