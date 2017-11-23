@@ -4,9 +4,9 @@
   "description": "Me-page with express and react",
   "main": "react-frontend/index.js",
   "scripts": {
-    "start": "node express-backend/index.js",
+    "start": "node express-backend/src/server.js",
     "start-client": "cd react-frontend && npm start",
-    "start-backend": "node express-backend/index.js",
+    "start-backend": "node express-backend/src/server.js",
     "start-dev": "concurrently --kill-others \"npm run start-client\" \"npm run start-backend\"",
     "install": "cd react-frontend && npm install && npm run build",
     "test": "cd react-frontend && npm test && npm test -- --coverage",
@@ -54,6 +54,7 @@
     "express": "^4.16.2",
     "jstransformer-markdown-it": "^2.0.0",
     "pug": "^2.0.0-rc.4",
+    "socket.io": "^2.0.4",
     "stylelint-config-sass-guidelines": "^3.1.0"
   }
 }

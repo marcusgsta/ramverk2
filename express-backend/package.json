@@ -2,9 +2,9 @@
   "name": "redovisa",
   "version": "1.0.6",
   "description": "Express me-page app for the course ramverk2",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,6 +32,7 @@
     "jscs": "^3.0.7",
     "jsonlint": "^1.6.2",
     "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
     "nyc": "^11.3.0",
     "postcss-reporter": "^5.0.0",
     "postcss-scss": "^1.0.2",

@@ -2,7 +2,12 @@
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
+$background-color: #323836;
 $background-color: #fff;
+$text-color: #222;
+$gray: #697130;
+$primary-blue: #5072FF;
+
 
 // mixins
 
@@ -62,7 +67,7 @@ nav {
 
 body {
   font: 110% $font-stack;
-  color: $primary-color;
+  color: $text-color;
   background-color: $background-color;
   width: 80%;
   margin: 0 auto;
@@ -71,6 +76,9 @@ body {
   padding-top:24px;
 }
 
+.main {
+    margin: 0 auto;
+}
 
 // .main
 
@@ -97,6 +105,82 @@ body {
 // .tree img {
 //     width: 100%;
 // }
+
+// chat
+.messages {
+    background-color: #BAD1B5;
+    padding:12px;
+    height: 220px;
+    overflow:scroll;
+    scroll-behavior: auto;
+    color: #000;
+}
+
+.feedback {
+    color: $gray;
+    font-style: italic;
+}
+
+.chatMessage {
+}
+
+.chat-input {
+    margin: 0 auto;
+    margin-top: 16px;
+    width: 500px;
+}
+
+input.form-control {
+    font-size:16px;
+    padding:4px;
+    width: 100%;
+    text-align: center;
+}
+
+button.send {
+    margin: 16px 0 16px 0;
+    font-size:24px;
+    padding:4px;
+    width: 100%;
+    background-color: #FFA644;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+.site-footer {
+    // height: 24px;
+    padding: 24px;
+    background-color: #DBE8CF;
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 16px;
+}
 
 // general
 

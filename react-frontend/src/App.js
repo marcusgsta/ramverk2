@@ -8,6 +8,7 @@ import Home from './components/home.js';
 import About from './components/about.js';
 import Report from './components/report.js';
 import LandingPage from './components/landing-page.js';
+import { Chat } from './components/chat.js';
 
 //router
 import {
@@ -41,6 +42,7 @@ const Layout = () => (
                             <li><Link to="/om">Om</Link></li>
                             <li><Link to="/report">Redovisningar</Link></li>
                             <li><Link to="/landing-page">Klient/server-app</Link></li>
+                            <li><Link to="/chat">Chat</Link></li>
                         </ul>
                     </nav>
                 </navbar>
@@ -52,6 +54,7 @@ const Layout = () => (
                 <Route path="/om" component={About}/>
                 <Route path="/report" component={Report}/>
                 <Route path="/landing-page" component={LandingPage}/>
+                <Route path="/chat" component={Chat}/>
             </div>
             <div className="site-footer">
                 Copyright (c) by Marcus Gustafsson
