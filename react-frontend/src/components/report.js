@@ -82,6 +82,27 @@ const Report = () => (
         <p>Klient/server-appen har jag lagt upp på Heroku. lite granna pill, men i stort enkelt system för att sjösätta appar. <a href='https://pacific-fortress-69141.herokuapp.com/#/'>Min app</a> Det tar cirka 10 sekunder att ladda när sidan varit inaktiv, på grund av att det är en gratistjänst. När man laddat sidan en gång, så är den i aktivt läge och går fortare att ladda.</p>
 
         <h3>Kmom04</h3>
+
+        <p><em>Är du ny på realtidsprogrammering eller har du gjort liknande tidigare?</em></p>
+
+        <p>Jag har aldrig gjort detta tidigare, så det var kul att sätta igång med och till slut få ett hum om.</p>
+
+        <p><em>Hur gick det att jobba med konceptet realtidsprogrammering i webben, några reflektioner?</em></p>
+
+        <p>Det flöt på bra. Jag läste igenom artikeln, och sen på egen hand lite olika videos om websockets, och så specifikt kombinerat med Express.js. Jag tycker jag har fått ett grepp om konceptet. Det fick bli socket.io som kändes enkelt att jobba med. Man installerar på både server och klient, och sedan har man några enkla kommandon för att kommunicera emellan, och sända svar ut till alla klienter. Man får tänka till lite på processen, att det först är en klient som sänder, en server som tar emot och sänder vidare till alla andra uppkopplade klienter.</p>
+
+        <p>Detta området känns också spännande i sig, realtidskommunikation är nog en teknik som blir viktigare och viktigare för alla möjliga applikationer.</p>
+
+        <p><em>Berätta om din chatt som du integrerade i redovisa-sidan.</em></p>
+
+        <p>Jag gjorde den som sagt med sockets.io. Man skriver in ett nick i ett fält och så ett meddelande där under. Jag lade till en trevlig funktion där de andra klienterna får ett meddelande när man håller på att skriva något – eventen är kopplad till onKeyPress och avfyras då en gång. </p>
+
+        <p><em>Berätta om den realtidsfunktionalitet du väljer att integrera i din klient/server applikation.</em></p>
+
+        <p>Jag valde att fortsätta jobba med chatten, och kopierade den och fixade lite på stylingen.</p>
+
+        <p>Båda chattarna använder sockets.io.</p>
+        <p>Angående tester så har jag några som testar att komponenter blir laddade i React. För backend har jag använt Supertest för att testa några routes. Har inte lagt till några fler tester. Det känns krångligt att testa chat, jag vet att andra har kämpat med det. I övrigt finns inte så mycket logik som skulle vara enklare att testa. Jag har också prövat att testa en metod updateScroll i min komponent/klass Chat. Jag lät det vara så länge och får återkomma.</p>
         <h3>Kmom05</h3>
         <h3>Kmom06</h3>
         <h3>Kmom07-10</h3>
