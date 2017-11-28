@@ -89,7 +89,7 @@ const Report = () => (
 
         <p><em>Hur gick det att jobba med konceptet realtidsprogrammering i webben, några reflektioner?</em></p>
 
-        <p>Det flöt på bra. Jag läste igenom artikeln, och sen på egen hand lite olika videos om websockets, och så specifikt kombinerat med Express.js. Jag tycker jag har fått ett grepp om konceptet. Det fick bli socket.io som kändes enkelt att jobba med. Man installerar på både server och klient, och sedan har man några enkla kommandon för att kommunicera emellan, och sända svar ut till alla klienter. Man får tänka till lite på processen, att det först är en klient som sänder, en server som tar emot och sänder vidare till alla andra uppkopplade klienter.</p>
+        <p>Det flöt på bra till en början. Jag läste igenom artikeln, och sen på egen hand lite olika videos om websockets, och så specifikt kombinerat med Express.js. Jag tycker jag har fått ett grepp om konceptet. Det fick bli socket.io som kändes enkelt att jobba med. Man installerar på både server och klient, och sedan har man några enkla kommandon för att kommunicera emellan, och sända svar ut till alla klienter. Man får tänka till lite på processen, att det först är en klient som sänder, en server som tar emot och sänder vidare till alla andra uppkopplade klienter.</p>
 
         <p>Detta området känns också spännande i sig, realtidskommunikation är nog en teknik som blir viktigare och viktigare för alla möjliga applikationer.</p>
 
@@ -102,7 +102,9 @@ const Report = () => (
         <p>Jag valde att fortsätta jobba med chatten, och kopierade den och fixade lite på stylingen.</p>
 
         <p>Båda chattarna använder sockets.io.</p>
-        <p>Angående tester så har jag några som testar att komponenter blir laddade i React. För backend har jag använt Supertest för att testa några routes. Har inte lagt till några fler tester. Det känns krångligt att testa chat, jag vet att andra har kämpat med det. I övrigt finns inte så mycket logik som skulle vara enklare att testa. Jag har också prövat att testa en metod updateScroll i min komponent/klass Chat. Jag lät det vara så länge och får återkomma.</p>
+        <p>Angående tester så har jag några som testar att komponenter blir laddade i React. För backend har jag använt Supertest för att testa några routes. Har inte lagt till några fler tester. Det känns krångligt att testa chat, jag vet att andra har kämpat med det. I övrigt finns inte så mycket logik att testa. Jag har prövat att testa en metod updateScroll i min komponent/klass Chat, till slut nöjde jag mig med att checka att det går att kalla på metoden. Jag lät det vara så länge och får återkomma.</p>
+
+        <p>Jag hade lite krångel när jag ville införliva använda metoden componentDidMount() inne i en React-komponent. Det var det gamla problemet med this och bind. Jag löste det genom att ändra en anonym funktion inne i componentDidMount till ES6-funktion. På det sättet knyts this till det omgivande lagret, om jag har förstått det rätt. Det har också uppstått svårigheter med portar. Främst för att få det att fungera både på Heroku och på den lokala react development server, som är smidig att använda, då man inte behöver bygga appen för varje ändring. Det verkar som om det hela berodde på att porten var upptagen, och jag behövde i tillägg ändra i attributet proxy, i min package.json, för att dev-servern skulle fungera. Nåja, nu ska det funka. </p>
         <h3>Kmom05</h3>
         <h3>Kmom06</h3>
         <h3>Kmom07-10</h3>
