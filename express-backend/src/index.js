@@ -3,11 +3,19 @@
 var express = require("express");
 var path = require("path");
 
+var bodyParser = require('body-parser');
+
 //routes
 var index = require(__dirname + '/routes/index');
 var about = require(__dirname + '/routes/about');
 var report = require(__dirname + '/routes/report');
 var users = require(__dirname + '/routes/users');
+//var mongodb = require(__dirname + '/routes/mongodb');
+var read = require(__dirname + '/api/read');
+var add = require(__dirname + '/api/add');
+var remove = require(__dirname + '/api/remove');
+var update = require(__dirname + '/api/update');
+
 var landingpage = require(__dirname + '/routes/client-server-app');
 var chat = require(__dirname + '/routes/chat');
 
@@ -23,6 +31,8 @@ var staticFiles = path.join(__dirname, "../../react-frontend/build");
 app.use(express.static(staticFiles));
 
 // This is middleware called for all routes
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true})); // support encoded bodies
 app.use((req, res, next) => {
     console.log(req.method);
     console.log(req.path);
@@ -46,6 +56,15 @@ app.use('/report', report);
 app.use('/users', users);
 app.use('/client-server-app', landingpage);
 app.use('/chat', chat);
+//app.use('/mongodb', mongodb);
+
+// api routes
+app.use('/api/read', read);
+app.use('/api/add/', add);
+app.use('/api/remove', remove);
+app.use('/api/update', update);
+
+
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
     let err = new Error("Not Found");

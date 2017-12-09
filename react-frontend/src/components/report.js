@@ -106,6 +106,8 @@ const Report = () => (
 
         <p>Jag hade lite krångel när jag ville införliva använda metoden componentDidMount() inne i en React-komponent. Det var det gamla problemet med this och bind. Jag löste det genom att ändra en anonym funktion inne i componentDidMount till ES6-funktion. På det sättet knyts this till det omgivande lagret, om jag har förstått det rätt. Det har också uppstått svårigheter med portar. Främst för att få det att fungera både på Heroku och på den lokala react development server, som är smidig att använda, då man inte behöver bygga appen för varje ändring. Det verkar som om det hela berodde på att porten var upptagen, och jag behövde i tillägg ändra i attributet proxy, i min package.json, för att dev-servern skulle fungera. Nåja, nu ska det funka. </p>
         <h3>Kmom05</h3>
+        <p>Det var krångligt att komma igång med Mongodb, lite grann på grund av otur. Jag testade exempelkoden vi fått vilken fungerade med Mongodb version 2.2.33, men inte med den senaste versionen som jag installerade i mitt eget repo. Efter lite feedback så verkar det som om docker-imagen av Mongodb inte hade uppdaterats när de för några dagar sedan gjorde en större uppdatering av npm-modulen för Mongodb, vilket gjorde att den senaste npm-modulen 3.0.0rc inte fungerade med docker-imagen. Jag nedgraderade därför min Mongodb-modul, och allt funkade igen.</p>
+
         <h3>Kmom06</h3>
         <h3>Kmom07-10</h3>
     </div>

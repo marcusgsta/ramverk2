@@ -52,6 +52,10 @@ body {
   -ms-border-radius: 5px;
   border-radius: 5px; }
 
+/* mongodb */
+.formula .name {
+  font-weight: 700; }
+
 .messages {
   background-color: #BAD1B5;
   padding: 12px;
