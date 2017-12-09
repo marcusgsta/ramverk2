@@ -26,10 +26,10 @@ export class Crud extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        //this.setState({name: event.target.value});
-        //this.setState({name: [...this.state.name, event.target.value]});
-    }
+    // handleChange(event) {
+    //     //this.setState({name: event.target.value});
+    //     //this.setState({name: [...this.state.name, event.target.value]});
+    // }
 
     handleSubmit(event) {
         //this.add(event);
