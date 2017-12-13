@@ -1,4 +1,9 @@
 // @import 'normalize';
+@import 'patternlab/scss/00-settings/_global-variables.scss';
+@import 'patternlab/scss/01-tools/_mixins.scss';
+//@import 'patternlab/scss/04-components/_button.scss';
+@import 'patternlab/scss/04-components/navigation/_primary-nav.scss';
+@import 'dropdownmenu.scss';
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
@@ -7,7 +12,7 @@ $background-color: #fff;
 $text-color: #222;
 $gray: #697130;
 $primary-blue: #5072FF;
-
+$hover-color: $color-blue-grey-2;
 
 // mixins
 
@@ -22,45 +27,83 @@ $primary-blue: #5072FF;
 // Nav
 
 .site-header {
-    overflow: auto;
-    }
+    //overflow: auto;
+    height:100px;
+}
 
 #icon {
     float:left;
+}
+
+@media screen and (max-width: 760px) {
+    #icon {
+        display: none;
+    }
 }
 
 // navbar {
 //     position:relative;
 // }
 
-nav {
-    padding: 35px 0 35px 120px;
-    height:100%;
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    display: inline-block;
-    background-color: #eefad7;
-    @include border-radius(10px);
-    margin-right:4px;
-  }
-
-  a {
-    display: block;
-    padding: 6px 12px;
-    text-decoration: none;
-    color: #333;
-  }
-
-  li:hover {
-      background-color:#d1ffea;
-  }
+.primary-nav {
+    margin-top: 26px;
+    padding-left: 20px;
 }
+
+@media screen and (max-width: 760px) {
+    .primary-nav {
+        margin-top: 0;
+    }
+}
+
+.primary-nav li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.primary-nav li a:hover {
+    color: blue;
+}
+@include navmenu(1000, 100%);
+
+@media screen and (max-width: 760px) {
+    .centeredmenu ul li {
+       clear:both;
+   }
+}
+
+// .centeredmenu {
+//     @include navmenu(1000, 100%);
+// }
+
+// nav {
+//     padding: 35px 0 35px 120px;
+//     height:100%;
+//
+//   ul {
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+//   }
+//
+//   li {
+//     display: inline-block;
+//     background-color: #eefad7;
+//     @include border-radius(10px);
+//     margin-right:4px;
+//   }
+//
+//   a {
+//     display: block;
+//     padding: 6px 12px;
+//     text-decoration: none;
+//     color: #333;
+//   }
+//
+//   li:hover {
+//       background-color:#d1ffea;
+//   }
+// }
 
 
 // Body
@@ -78,6 +121,8 @@ body {
 
 .main {
     margin: 0 auto;
+    padding: 24px 0;
+    clear:both;
 }
 
 // .main
@@ -108,10 +153,109 @@ body {
 
 /* mongodb */
 .formula {
+    padding: 8px 0 0;
     .name {
         font-weight: 700;
     }
+    .formel {
+        margin: 0 0 8px;
+        padding: 8px;
+        border:1px solid gray;
+        display:inline-block;
+    }
+    .description {
+        margin: 0 0 0 8px;
+        font-style: italic;
+    }
 }
+
+form {
+    input {
+        font-size:16px;
+        padding:4px;
+        margin: 8px 0 4px;
+        }
+    select {
+        font-size:16px;
+        padding: 8px;
+        margin: 0 0 8px;
+        height:40px;
+    }
+    input[type="submit"] {
+        margin-bottom: 16px;
+    }
+    .add {
+        margin: 0 0 0 8px;
+    }
+}
+
+// .output {
+//     opacity:0;
+//     //-webkit-transition: opacity 2s;
+//     //transition: opacity 2s;
+//     background-color: green;
+//     color: lightgrey;
+//     padding:12px;
+//     height:120px;
+//     font-size: 20px;
+// }
+
+
+.output {
+    height:40px;
+    padding:12px;
+    font-size:20px;
+    text-align:center;
+    line-height: 100%;
+}
+
+.animate {
+    opacity: 0;
+    animation: KEYFRAME-NAME 4s;
+    //-webkit-transition: opacity 2s;
+    //transition: opacity 2s;
+    background-color: #4CAF50;
+    color: #000;
+    @include border-radius(10px);
+
+}
+
+.animateWarning {
+    opacity: 0;
+    animation: KEYFRAME-NAME 4s;
+    //-webkit-transition: opacity 2s;
+    //transition: opacity 2s;
+    background-color: darkred;
+    color: #fff;
+    @include border-radius(10px);
+}
+
+
+@keyframes KEYFRAME-NAME {
+    0% { opacity: 0;}
+    25% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+
+// .example-enter, .example-appear {
+//   opacity: 0.01;
+// }
+//
+// .example-enter.example-enter-active, .example-appear.example-appear-active {
+//   opacity: 1;
+//   transition: opacity 500ms ease-in;
+// }
+//
+// .example-leave {
+//   opacity: 1;
+// }
+//
+// .example-leave.example-leave-active {
+//   opacity: 0.01;
+//   transition: opacity 300ms ease-in;
+// }
 
 // chat
 .messages {

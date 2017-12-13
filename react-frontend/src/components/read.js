@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import PropTypes from 'prop-types';
 
 export class Read extends Component {
     constructor(props) {
@@ -15,23 +14,28 @@ export class Read extends Component {
     componentDidMount() {
         fetch('http://localhost:1337/api/read')
             .then(results => {
-                return results.json();
+                if (results.ok) {
+                    return results.json();
+                }
+                throw new Error("Network response was not ok.");
             }).then(data => {
                 console.log(data);
                 this.setState({formulas: data});
                 console.log("state", data);
+            }).catch(error => {
+                console.log("There was a problem with your fetch operation: ", error.message);
             });
     }
     render() {
         return (
             <div>
-                <h2>Crud</h2>
+                <h2>Läsa värden från databas</h2>
                 <p>Detta är en demo av CRUD-operationer med hjälp av Mongodb.</p>
                 <p>Här läses databasens innehåll:</p>
                 {
                     this.state.formulas.map((data, i) => {
                         return <div className="formula" key={i}>
-                            <span className="name">{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</span>: <span className="form">{data.formula}</span></div>;
+                            <h3 className="name">{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h3> <div className="formel">{data.formula}</div><span className="description"> {data.description}</span></div>;
                     })
                 }
             </div>

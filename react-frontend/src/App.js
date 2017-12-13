@@ -9,7 +9,6 @@ import About from './components/about.js';
 import Report from './components/report.js';
 import LandingPage from './components/landing-page.js';
 import { Chat } from './components/chat.js';
-import Crud from './components/crud.js';
 import Read from './components/read.js';
 import Add from './components/add.js';
 import Remove from './components/remove.js';
@@ -37,33 +36,33 @@ import {
 
 const Layout = () => (
     <Router>
-        <div>
+        <div className="container">
             <div className="site-header">
-                <img id="icon" alt="express icon" src={expressIcon} />
-                <nav className="site-navbar">
-                    <ul>
+                <div className="centeredmenu">
+                    <img id="icon" alt="express icon" src={expressIcon} />
+                    <ul className="site-navbar primary-nav">
                         <li><Link to="/">Hem</Link></li>
                         <li><Link to="/om">Om</Link></li>
                         <li><Link to="/report">Redovisningar</Link></li>
                         <li><Link to="/landing-page">Klient/server-app</Link></li>
                         <li><Link to="/chat">Chat</Link></li>
-                        <li><Link to="/crud">Crud</Link></li>
-                        <li><Link to="/read">Read</Link></li>
-                        <li><Link to="/add">Add</Link></li>
-                        <li><Link to="/remove">Remove</Link></li>
-                        <li><Link to="/update">Update</Link></li>
+                        <li><Link to="/read">Mongodb</Link>
+                            <ul>
+                                <li><Link to="/read">Read</Link></li>
+                                <li><Link to="/add">Add</Link></li>
+                                <li><Link to="/remove">Remove</Link></li>
+                                <li><Link to="/update">Update</Link></li>
+                            </ul></li>
                     </ul>
-                </nav>
+                </div>
             </div>
             <hr/>
             <div className="main">
-
                 <Route exact path="/" component={Home}/>
                 <Route path="/om" component={About}/>
                 <Route path="/report" component={Report}/>
                 <Route path="/landing-page" component={LandingPage}/>
                 <Route path="/chat" component={Chat}/>
-                <Route path="/crud" component={Crud}/>
                 <Route path="/read" component={Read}/>
                 <Route path="/add" component={Add}/>
                 <Route path="/remove" component={Remove}/>

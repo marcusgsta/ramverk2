@@ -11,10 +11,10 @@ var about = require(__dirname + '/routes/about');
 var report = require(__dirname + '/routes/report');
 var users = require(__dirname + '/routes/users');
 //var mongodb = require(__dirname + '/routes/mongodb');
-var read = require(__dirname + '/api/read');
-var add = require(__dirname + '/api/add');
-var remove = require(__dirname + '/api/remove');
-var update = require(__dirname + '/api/update');
+var read = require(__dirname + '/mongodb/api/read');
+var add = require(__dirname + '/mongodb/api/add');
+var remove = require(__dirname + '/mongodb/api/remove');
+var update = require(__dirname + '/mongodb/api/update');
 
 var landingpage = require(__dirname + '/routes/client-server-app');
 var chat = require(__dirname + '/routes/chat');

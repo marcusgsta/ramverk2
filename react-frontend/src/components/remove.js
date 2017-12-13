@@ -8,11 +8,26 @@ export class Remove extends Component {
             name: [],
             value: '',
             output: '',
-            id: ''
+            animate: '',
+            id: '',
+            timeout: null
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    resetMessages() {
+        if (this.state.timeout !== null) {
+            clearTimeout(this.state.timeout);
+        }
+        setTimeout(() => {
+            this.setState({
+                animate: '',
+                output: '',
+                timeout: null
+            });
+        }, 3500);
     }
 
     handleChange(event) {
@@ -36,30 +51,44 @@ export class Remove extends Component {
 
         fetch('http://localhost:1337/api/remove', myInit)
             .then(results => {
-                return results.json();
+                if (results.ok) {
+                    return results.json();
+                }
+                throw new Error("Network response was not ok.");
             }).then(data => {
                 this.setState({
                     formulas: this.state.formulas.filter(formula => formula._id !== this.state.id)
                 });
                 console.log("state", data);
+                this.setState({output: "Formeln raderades!"});
+                this.setState({animate: "animate"});
+                console.log(data);
+                this.resetMessages();
+            }).catch(error => {
+                console.log("There was a problem with your fetch operation: ", error.message);
             });
     }
 
     componentDidMount() {
         fetch('http://localhost:1337/api/read')
             .then(results => {
-                return results.json();
+                if (results.ok) {
+                    return results.json();
+                }
+                throw new Error("Network response was not ok.");
             }).then(data => {
                 this.setState({formulas: data});
                 console.log("state", data);
+            }).catch(error => {
+                console.log("There was a problem with your fetch operation: ", error.message);
             });
     }
     render() {
         return (
             <div>
-                <h2>Crud</h2>
+                <h2>Radera från databas</h2>
                 <p>Detta är en demo av CRUD-operationer med hjälp av Mongodb.</p>
-                <p>Här läses databasens innehåll:</p>
+                <p>Här kan du radera objekt ifrån databasen:</p>
                 <form onSubmit={this.handleSubmit}>
                     <select name="id" onChange={this.handleChange}>
                         {
@@ -68,8 +97,9 @@ export class Remove extends Component {
                             })
                         }
                     </select>
-                    <input type="submit" value="Ta bort" />
+                    <input className="btn" type="submit" value="Ta bort" />
                 </form>
+                <div className={"output " + this.state.animate}>{this.state.output}</div>
             </div>
         );
     }

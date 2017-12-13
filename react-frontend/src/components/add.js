@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import PropTypes from 'prop-types';
 
 export class Add extends Component {
     constructor(props) {
@@ -8,56 +7,85 @@ export class Add extends Component {
             formula: '',
             name: '',
             value: '',
-            output: ''
+            description: '',
+            output: '',
+            animate: '',
+            timeout: null
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    resetMessages() {
+        if (this.state.timeout !== null) {
+            clearTimeout(this.state.timeout);
+        }
+        setTimeout(() => {
+            this.setState({
+                animate: '',
+                output: '',
+                timeout: null
+            });
+        }, 3500);
+    }
+
     handleChange(event) {
-        //this.setState({name: event.target.value});
         this.setState({[event.target.name]: event.target.value});
-        //this.setState({name: [...this.state.name, event.target.value]});
     }
 
     handleSubmit(event) {
-        //this.add(event);
-        //this.state.name.push(event.target.value);
+        event.preventDefault();
+        if (this.state.name === '' || this.state.formula === '' || this.state.description === '') {
+            console.log("name is empty string");
+            this.setState({output: "Vänligen skriv in värden i alla fält!"});
+            this.setState({animate: "animateWarning"});
+            this.resetMessages();
+            return;
+        }
+        console.log(typeof(this.state.name));
         console.log('A name was submitted: ' + this.state.name);
         console.log('A formula was submitted: ' + this.state.formula);
-        event.preventDefault();
+        console.log('A description was submitted: ' + this.state.description);
 
-        //const myHeaders = new Headers();
 
         const myInit = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             cache: 'default',
-            body: JSON.stringify({"name": this.state.name, "formula": this.state.formula})
+            body: JSON.stringify({"name": this.state.name, "formula": this.state.formula, "description": this.state.description})
         };
 
         fetch('http://localhost:1337/api/add', myInit)
             .then(results => {
-                return results.json();
+                if (results.ok) {
+                    return results.json();
+                }
+                throw new Error('Network response was not ok.');
             }).then(data => {
+                this.setState({output: "Formeln lades till i databas!"});
+                this.setState({animate: "animate"});
                 console.log(data);
-                //this.setState({formulas: data});
                 console.log("state", data);
+                this.resetMessages();
+            }).catch(error => {
+                console.log('There has been a problem with your fetch operation: ', error.message);
             });
     }
 
     render() {
         return (
             <div>
-                <h2>Crud</h2>
+                <h2>Lägga till</h2>
                 <p>Detta är en demo av CRUD-operationer med hjälp av Mongodb.</p>
                 <p>Här kan du lägga till en formel till databasen:</p>
                 <form onSubmit={this.handleSubmit}>
-                    <input name="name" placeholder="Namn" type="text" value={this.state.name} onChange={this.handleChange}/>
-                    <input name="formula" placeholder="Formel" type="text" value={this.state.formula} onChange={this.handleChange}/>
-                    <input type="submit" value="Lägg till"/>
+                    <input name="name" placeholder="Namn" type="text" value={this.state.name} onChange={this.handleChange}/><br />
+                    <input name="formula" placeholder="Formel" type="text" value={this.state.formula} onChange={this.handleChange}/><br />
+                    <input name="description" placeholder="Beskrivning" type="text" value={this.state.description} onChange={this.handleChange}/><br />
+                    <input className="btn" type="submit" value="Lägg till"/>
                 </form>
+                <div className={"output " + this.state.animate}>{this.state.output}</div>
             </div>
         );
     }
