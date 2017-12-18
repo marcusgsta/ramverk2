@@ -12,6 +12,12 @@ Clone this repo with
 git clone https://github.com/marcusgsta/ramverk2.git
 ```
 
+Start Docker Container to run Mongodb database, and run in detached mode:
+
+```
+docker-compose up -d mongodb
+```
+
 Start with
 ```
 npm install && npm start
@@ -33,4 +39,9 @@ This will take some time. When the unit tests are done you will need to press 'Q
 Optional: Set port (default: 1337)
 ```
 DBWEBB_PORT=PORT_NUMBER
+```
+
+To reset database – erase all and fill with default data:
+```
+npm run reset-database
 ```
