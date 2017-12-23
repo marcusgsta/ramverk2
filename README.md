@@ -9,7 +9,17 @@
 Clone this repo with
 
 ```
+mkdir repo-name
+cd repo-name
 git clone https://github.com/marcusgsta/ramverk2.git
+npm install
+```
+
+Make sure no other Docker container is running,
+and if that is the case, stop it:
+```
+docker ps
+docker stop name-of-your-container
 ```
 
 Start Docker Container to run Mongodb database, and run in detached mode:
@@ -25,7 +35,7 @@ npm run reset-database
 
 Start with
 ```
-npm install && npm start
+npm start
 ```
 
 Test repos with
