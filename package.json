@@ -13,7 +13,8 @@
     "test1": "docker-compose run node7 && npm test",
     "test2": "docker-compose run node8 && npm test",
     "test3": "docker-compose run node9 && npm test",
-    "posttest": "make test"
+    "posttest": "make test",
+    "reset-database": "node express-backend/src/mongodb/setup.js"
   },
   "repository": {
     "type": "git",

@@ -105,6 +105,30 @@ class Mongodb {
 
         return res;
     }
+
+    /**
+     * Reset a collection by removing existing content and insert a default
+     * set of documents.
+     *
+     * @async
+     *
+     * @param {string} dsn     DSN to connect to database.
+     * @param {string} colName Name of collection.
+     * @param {string} doc     Documents to be inserted into collection.
+     *
+     * @throws Error when database operation fails.
+     *
+     * @return {Promise<void>} Void
+     */
+    async resetCollection(dsn, colName, doc) {
+        const db  = await this.mongo.connect(dsn);
+        const col = await db.collection(colName);
+
+        await col.deleteMany();
+        await col.insertMany(doc);
+        console.log("Database was reset and setup.");
+        await db.close();
+    }
 }
 
 

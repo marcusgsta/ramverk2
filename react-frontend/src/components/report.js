@@ -131,7 +131,25 @@ const Report = () => (
         <p><em>Enhetstester</em></p>
         <p>När det gäller klient-server-appen jobbade jag en del med att lägga in enhetstester för Express-backend. Mina databasanrop har numera testfiler, vilket känns bra. Här har jag använt Supertest och Jest. Det som testas är om anropen utförs. Dessvärre körs riktiga anrop, vilket gör att det läggs till ett tomt objekt när ADD körs. Så ytterligare saker att göra på testdelen hade varit att mocka anropen, för att kunna testa dem utan att påverka databasen. En annan sak är att Scrutinizer bara ger mig kodtäckning för React-delen. Har pillat en del med konfigurationen, men lyckades inte rätta till detta. Möjligen återvänder jag till det längre fram. </p>
         <p>I övrigt är klient-server-appen i stort sätt detsamma som min redovisa-app. Jag väntar med att göra en mer särskild app till projektet.</p>
+
         <h3>Kmom06</h3>
+        <p><em>Reflektera över vikten av infrastruktur för moduler för ett programmeringsspråk.</em></p>
+
+        <p>Nu när jag blivit mer bekant med npm så känns det som en snabb och användbar infrastruktur, men kanske också med vissa nackdelar. Jag gillar att det är så lätt att ladda upp moduler som man sedan kan återanvända. Det känns ju också som ett väldigt generöst system, eftersom allt (?) egentligen verkar vara open source. Folk delar gladeligen med sig av kod de skrivit. Andra förbättrar och förändrar, och tillsammans kommer communityt framåt. Nackdelar med just npm kan jag tycka är att det känns lite oöverskådligt vilken kod man egentligen använder. Ofta dras en massa beroenden med, och mappen node_modules blir stor och tung. Eftersom vem som helst med ett konto kan publicera sin modul så finns ju ingen kontroll. Jag kan ladda upp en halvfärdig modul och ser att folk laddar hem det oavsett. Om det nu inte är robotar, det har jag inte koll på. Men ett smidigt system är det, och en källa till att lära sig nya saker, se nya lösningar och idéer. Jag antar man behöver kritiskt granska här som på andra ställen.</p>
+
+        <p><em>Vill du ge dig på att förklara att just npm är den tjänsten som växt snabbast av de modulerkataloger som presenteras på webbplatsen “Module Counts”?</em></p>
+
+        <p>Som jag var inne på tidigare så känns det väldigt snabbt. Man publicerar och det syns direkt på npm:s sidor. En package.json-fil som håller ordning på det hela.  </p>
+
+        <p><em>Reflektera över hur arbetet gick att välja, separera, publisera och sedan åter integrera module i din applikation.</em></p>
+
+        <p>Jag funderade på det bästa sättet att separera en modul och diskuterade även i gitter. Det vanliga sättet, antar jag, är nog att skapa moduler som gör en enda sak. Att därför hålla modulen relativt liten. Detta också för att kunna lyfta in den som ett beroende, och till exempel anropa dess metoder. Modulen blir väl ett objekt, ett bibliotek med funktioner som man kan använda som man vill. Därför bör den ju vara generell. Jag skapade först en modul med mycket av funktionaliteten jag byggt under kmom05. Så renodlade jag och valde till sist att utveckla och göra mitt api med anrop till mongodb så generellt som möjligt. Man ska kunna definiera sin databas, och sända både collection. Samtidigt behöver det fungera så att man kan köra insert i fält som man själv bestämmer namnet på. </p>
+        <p>Jag är nöjd med slutresultatet, och att ha generaliserat så att man med hjälp av api:et kan skapa en databas, skapa collections med fält och värden. Det bygger i stor grad på exemplet från kursmoment 5 ska tilläggas.</p>
+
+        <p><em>Sista uppgiften om att dokumentera och färdigställa redovisa-sidan, tog det mycket tid eller hade du allt klart?</em></p>
+
+        <p></p>
+
         <h3>Kmom07-10</h3>
     </div>
 );
