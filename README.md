@@ -9,9 +9,8 @@
 Clone this repo with
 
 ```
-mkdir repo-name
-cd repo-name
 git clone https://github.com/marcusgsta/ramverk2.git
+cd ramverk2
 npm install
 ```
 

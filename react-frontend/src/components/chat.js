@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import io from "socket.io-client";
 import PropTypes from 'prop-types';
 
+var PORT;
+
+PORT = window.location.port || 1337;
+console.log(PORT);
+
 const Message = ({message}) => (
     <div className="chatMessage">
         <div>{message.author}: {message.message}</div>
@@ -24,7 +29,8 @@ export class Chat extends Component {
             shouldHandleKeyPress: true
         };
         // this.socket = io('localhost:1337');
-        this.socket = io('localhost:' + 1337);
+        // this.socket = io('localhost:' + 1337);
+        this.socket = io('localhost:' + PORT);
 
         this.sendMessage = ev => {
             ev.preventDefault();

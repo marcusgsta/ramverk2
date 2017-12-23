@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
 
+
+var PORT;
+
+PORT = window.location.port || 1337;
+console.log(PORT);
+
 export class Add extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +16,8 @@ export class Add extends Component {
             description: '',
             output: '',
             animate: '',
-            timeout: null
+            timeout: null,
+            url: 'http://localhost:' + PORT + '/api/add'
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -56,7 +63,8 @@ export class Add extends Component {
             body: JSON.stringify({"name": this.state.name, "formula": this.state.formula, "description": this.state.description})
         };
 
-        fetch('http://localhost:1337/api/add', myInit)
+        fetch(this.state.url, myInit)
+        // fetch('http://localhost:1337/api/add', myInit)
             .then(results => {
                 if (results.ok) {
                     return results.json();

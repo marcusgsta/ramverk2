@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
 
+
+var PORT;
+
+PORT = window.location.port || 1337;
+console.log(PORT);
+
 export class Read extends Component {
     constructor(props) {
         super(props);
@@ -7,12 +13,13 @@ export class Read extends Component {
             formulas: [],
             name: [],
             value: '',
-            output: ''
+            output: '',
+            url: 'http://localhost:' + PORT + '/api/read'
         };
     }
 
     componentDidMount() {
-        fetch('http://localhost:1337/api/read')
+        fetch(this.state.url)
             .then(results => {
                 if (results.ok) {
                     return results.json();

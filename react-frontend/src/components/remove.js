@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 
+var PORT;
+
+PORT = window.location.port || 1337;
+console.log(PORT);
+
 export class Remove extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +15,8 @@ export class Remove extends Component {
             output: '',
             animate: '',
             id: '',
-            timeout: null
+            timeout: null,
+            url: 'http://localhost:' + PORT + '/api'
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -49,7 +55,7 @@ export class Remove extends Component {
             body: JSON.stringify({"id": this.state.id})
         };
 
-        fetch('http://localhost:1337/api/remove', myInit)
+        fetch(this.state.url + '/remove', myInit)
             .then(results => {
                 if (results.ok) {
                     return results.json();
@@ -70,7 +76,7 @@ export class Remove extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:1337/api/read')
+        fetch(this.state.url + '/read')
             .then(results => {
                 if (results.ok) {
                     return results.json();
