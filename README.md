@@ -14,17 +14,16 @@ cd ramverk2
 npm install
 ```
 
-Make sure no other Docker container is running,
-and if that is the case, stop it:
-```
-docker ps
-docker stop name-of-your-container
-```
-
 Start Docker Container to run Mongodb database, and run in detached mode:
 
 ```
-docker-compose up -d mongodb
+npm run start-docker
+```
+
+If there is a problem, make sure no other Docker container is running, and if that is the case, stop it:
+```
+docker ps
+docker stop name-of-your-container
 ```
 
 Reset database and fill with default data:
@@ -44,9 +43,9 @@ npm test
 
 Test repos in different node environments like this:
 ```
-npm run test1 # for node 7
-npm run test2 # for node 8
-npm run test3 # for node 9
+npm run test1 # for node_latest
+npm run test2 # for node_alpine
+npm run test3 # for node_8_alpine
 ```
 This will take some time. When the unit tests are done you will need to press 'Q' to leave the Jest CLI and proceed with code coverage as a last step.
 

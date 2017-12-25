@@ -5,9 +5,12 @@ node_modules
 
 # testing
 /coverage
+/react-frontend/jest_0
 
 # production
 /build
+**/build/
+**/coverage/
 
 # misc
 .DS_Store
