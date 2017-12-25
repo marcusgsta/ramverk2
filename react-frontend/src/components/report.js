@@ -150,7 +150,7 @@ const Report = () => (
 
         <p>Det tog en del tid att felsöka. Det som inte fungerade var min npm run test1-2-3, vilka kör tester i Docker-containers för olika versioner av Node. Efter lite omvägar så fungerar det igen. Jag använder inte kodtäckning, för att undvika att det hänger sig. Jag tog också bort testerna för express-backend, och har nu enbart testerna för react-frontend. Dessutom körs eslint, stylelint och htmllint. Man behöver trycka <em>q</em> för att avsluta react-scripts-tester, eftersom de körs i watch-mode.</p>
 
-        <p>Jag fick komplettering i kmom05-04, eftersom redovisa-repot inte gick att köra på rättarens dator. Jag har uppdaterat nu och hoppas det går bättre. Det ska nu gå att välja vilken DBWEBB_PORT man vill köra på. Jag har också förtydligat README. </p>
+        <p>Jag fick komplettering i kmom05-04, eftersom redovisa-repot inte gick att köra på rättarens dator. Jag har uppdaterat nu och hoppas det går bättre. Det ska nu gå att välja vilken DBWEBB_PORT man vill köra på. Jag har också förtydligat README. Nu kan man köra npm install och då installeras båda repona front-end och back-end.</p>
         <h3>Kmom07-10</h3>
     </div>
 );

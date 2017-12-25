@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/marcusgsta/ramverk2.svg?branch=master)](https://travis-ci.org/marcusgsta/ramverk2)
-[![BCH compliance](https://bettercodehub.com/edge/badge/marcusgsta/ramverk2?branch=master)](https://bettercodehub.com/)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/badges/build.png?b=master)](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/?branch=master)
@@ -43,9 +42,9 @@ npm test
 
 Test repos in different node environments like this:
 ```
-npm run test1 # for node_latest
-npm run test2 # for node_alpine
-npm run test3 # for node_8_alpine
+npm run test1 # for node 7
+npm run test2 # for node 8
+npm run test3 # for node 9
 ```
 This will take some time. When the unit tests are done you will need to press 'Q' to leave the Jest CLI and proceed with code coverage as a last step.
 
