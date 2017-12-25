@@ -5,6 +5,8 @@
 
 # Ramverk2 – with react-frontend and express-backend
 
+This repo was made for the course Ramverk2 at Blekinge Tekniska Högskola. It constitutes a me-page, with a chat using websockets.io and Mongodb, as well as use of Docker. It was mad e by Marcus Gustafsson, and can be run locally by running the following instructions.
+
 Clone this repo with
 
 ```
@@ -35,9 +37,15 @@ Start with
 npm start
 ```
 
-Test repos with
+Test react-frontend repo with
 ```
 npm test
+```
+
+Additional testing:
+```
+npm run test-cov # code coverage for react-frontend
+npm run test-backend # test backend
 ```
 
 Test repos in different node environments like this:
