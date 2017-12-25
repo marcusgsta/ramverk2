@@ -5,7 +5,7 @@
 
 # Ramverk2 – with react-frontend and express-backend
 
-This repo was made for the course Ramverk2 at Blekinge Tekniska Högskola. It constitutes a me-page, with a chat using websockets.io and Mongodb, as well as use of Docker. It was mad e by Marcus Gustafsson, and can be run locally by running the following instructions.
+This repo was made for the course Ramverk2 at Blekinge Tekniska Högskola. It constitutes a me-page, with a chat using websockets.io and database CRUD using Mongodb, as well as use of Docker. It was made by Marcus Gustafsson, and can be run locally by following the instructions below.
 
 Clone this repo with
 
@@ -54,7 +54,7 @@ npm run test1 # for node 7
 npm run test2 # for node 8
 npm run test3 # for node 9
 ```
-This will take some time. When the unit tests are done you will need to press 'Q' to leave the Jest CLI and proceed with code coverage as a last step.
+This will take some time. When the unit tests are done you will need to press 'Q' to leave the Jest CLI.
 
 Optional: Set port (default: 1337)
 ```
