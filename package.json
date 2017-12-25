@@ -8,8 +8,9 @@
     "start-client": "cd react-frontend && npm start",
     "start-backend": "node express-backend/src/server.js",
     "start-dev": "concurrently --kill-others \"npm run start-client\" \"npm run start-backend\"",
-    "install": "cd react-frontend && npm install && npm run build",
+    "install": "cd react-frontend && npm install && npm run build && cd ../express-backend && npm install",
     "test": "cd react-frontend && npm test",
+    "test-cov": "cd react-frontend && npm test -- --coverage",
     "posttest": "make test",
     "test1": "docker-compose run node_9_test",
     "test2": "docker-compose run node_7_test",
@@ -52,19 +53,7 @@
     "postcss-scss": "^1.0.2",
     "stylelint": "^8.3.1",
     "stylelint-config-recommended-scss": "^2.0.0",
-    "stylelint-scss": "^2.2.0"
-  },
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "concurrently": "^3.5.1",
-    "express": "^4.16.2",
-    "jstransformer-markdown-it": "^2.0.0",
-    "mongodb": "^2.2.33",
-    "pug": "^2.0.0-rc.4",
-    "socket.io": "^2.0.4",
-    "stylelint-config-sass-guidelines": "^3.1.0"
-  },
-  "presets": [
-    "env"
-  ]
+    "stylelint-scss": "^2.2.0",
+    "concurrently": "^3.5.1"
+  }
 }
