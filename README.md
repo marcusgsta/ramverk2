@@ -3,7 +3,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/badges/build.png?b=master)](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/marcusgsta/ramverk2/?branch=master)
 
-# Ramverk2 – with react-frontend and express-backend
+# Ramverk2 – me-page made with Express.js (server)
 
 This repo was made for the course Ramverk2 at Blekinge Tekniska Högskola. It constitutes a me-page, with a chat using socket.io and database CRUD using Mongodb, as well as use of Docker. It was made by Marcus Gustafsson, and can be run locally by following the instructions below.
 
@@ -13,9 +13,15 @@ Clone this repo with
 git clone https://github.com/marcusgsta/ramverk2.git
 
 cd ramverk2
+```
 
+You will also need to clone the client into a new directory 'react-frontend'
+```
 git clone https://github.com/marcusgsta/redovisa-client.git react-frontend
+```
 
+Install both repos
+```
 npm install
 
 cd react-frontend && npm run install && npm build
