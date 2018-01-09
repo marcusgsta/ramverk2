@@ -24,7 +24,19 @@ Install both repos
 ```
 npm install
 
-cd react-frontend && npm run install && npm build
+cd react-frontend && npm install && npm run build
+```
+
+## Install Mongodb or Docker
+
+Choose either to install Docker or Mongodb.
+
+Install Docker according to your operating system:
+[Docker Installation pages](https://docs.docker.com/engine/installation/)
+
+Alternatively you can install Mongodb:
+```
+sudo apt-get install -y mongodb
 ```
 
 Start Docker Container to run Mongodb database, and run in detached mode:
@@ -48,6 +60,9 @@ Start with
 ```
 npm start
 ```
+
+
+## Test
 
 Test backend with
 ```

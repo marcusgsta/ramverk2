@@ -11,7 +11,8 @@ services:
         - ./:/home/node/app
       ports:
         - "1339:3000"
-      command: "npm test"
+      command: "bash -c 'npm install bcrypt && npm test'"
+
     node_8_test:
       image: "node:8"
       user: "node"
@@ -23,7 +24,8 @@ services:
         - ./:/home/node/app
       ports:
         - "1337:3000"
-      command: "npm test"
+      command: "bash -c 'npm install bcrypt && npm test'"
+
     node_7_test:
       image: "node:7"
       user: "node"
@@ -35,7 +37,8 @@ services:
         - ./:/home/node/app
       ports:
         - "1338:3000"
-      command: "npm test"
+      command: "bash -c 'npm install bcrypt && npm test'"
+
 
     node7:
       image: "node:7"

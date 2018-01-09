@@ -15,7 +15,7 @@ react-frontend/node-modules
 **/coverage/
 
 # subrepo
-react-frontend/
+react-frontend/*
 
 # misc
 .DS_Store
