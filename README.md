@@ -11,9 +11,14 @@ Clone this repo with
 
 ```
 git clone https://github.com/marcusgsta/ramverk2.git
+
 cd ramverk2
-npm run install-client
+
+git clone https://github.com/marcusgsta/redovisa-client.git react-frontend
+
 npm install
+
+cd react-frontend && npm run install && npm build
 ```
 
 Start Docker Container to run Mongodb database, and run in detached mode:
