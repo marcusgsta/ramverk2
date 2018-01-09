@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules
+react-frontend/node-modules
 
 # testing
 /coverage
@@ -10,6 +11,7 @@ node_modules
 # production
 /build
 **/build/
+/coverage/
 **/coverage/
 
 # misc
@@ -25,3 +27,7 @@ yarn-error.log*
 
 #db
 /data/db
+
+#sass
+/.sass-cache
+**/.sass-cache

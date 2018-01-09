@@ -12,6 +12,7 @@ Clone this repo with
 ```
 git clone https://github.com/marcusgsta/ramverk2.git
 cd ramverk2
+npm run install-client
 npm install
 ```
 
@@ -37,15 +38,18 @@ Start with
 npm start
 ```
 
-Test react-frontend repo with
+Test backend with
 ```
 npm test
 ```
-
-Additional testing:
+Test client with
 ```
-npm run test-cov # code coverage for react-frontend
-npm run test-backend # test backend
+cd react-frontend && npm test
+```
+
+Test code coverage for client:
+```
+npm run test-cov
 ```
 
 Test repos in different node environments like this:

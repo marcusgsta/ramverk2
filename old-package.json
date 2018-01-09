@@ -1,27 +1,23 @@
 {
   "name": "ramverk2",
-  "jest": {
-    "testPathIgnorePatterns": [
-      "react-frontend/src/"
-    ]
-  },
   "version": "6.0.5",
   "description": "Me-page with express and react",
   "main": "react-frontend/index.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node express-backend/src/server.js",
     "start-client": "cd react-frontend && npm start",
-    "start-backend": "node src/server.js",
+    "start-backend": "node express-backend/src/server.js",
     "start-dev": "concurrently --kill-others \"npm run start-client\" \"npm run start-backend\"",
-    "install-client": "cd react-frontend && npm install && npm run build",
-    "test": "jest --coverage",
+    "install": "cd react-frontend && npm install && npm run build && cd ../express-backend && npm install",
+    "test": "cd react-frontend && npm test",
     "test-cov": "cd react-frontend && npm test -- --coverage",
+    "test-backend": "cd express-backend && npm test",
     "posttest": "make test",
     "test1": "docker-compose run node_7_test",
     "test2": "docker-compose run node_8_test",
     "test3": "docker-compose run node_9_test",
     "start-docker": "docker-compose up -d mongodb",
-    "reset-database": "node src/mongodb/setup.js"
+    "reset-database": "node express-backend/src/mongodb/setup.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +30,7 @@
   },
   "homepage": "https://github.com/marcusgsta/ramverk2#readme",
   "devDependencies": {
+    "ajv": "5.0.3-beta.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.3",
     "babel-preset-env": "^1.6.1",
@@ -58,21 +55,6 @@
     "stylelint": "^8.3.1",
     "stylelint-config-recommended-scss": "^2.0.0",
     "stylelint-scss": "^2.2.0",
-    "concurrently": "^3.5.1",
-    "nodemon": "^1.12.1",
-    "stylelint-config-sass-guidelines": "^3.1.0",
-    "supertest": "^3.0.0"
-  },
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "jest": "^22.0.4",
-    "jstransformer-markdown-it": "^2.0.0",
-    "mongodb": "^2.2.33",
-    "pug": "^2.0.0-rc.4",
-    "socket.io": "^2.0.4"
-  },
-  "presets": [
-    "env"
-  ]
+    "concurrently": "^3.5.1"
+  }
 }
