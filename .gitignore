@@ -14,6 +14,9 @@ react-frontend/node-modules
 /coverage/
 **/coverage/
 
+# subrepo
+react-frontend/
+
 # misc
 .DS_Store
 .env.local
