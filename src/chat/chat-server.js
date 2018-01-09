@@ -5,7 +5,6 @@ const chatServer = (server) => {
     chatServer.io = socket(server);
 
     chatServer.io.on('connection', (socket) => {
-        console.log(socket.id);
         socket.on('SEND_MESSAGE', function(data) {
             chatServer.io.emit('RECEIVE_MESSAGE', data);
         });
