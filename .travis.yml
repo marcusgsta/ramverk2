@@ -18,5 +18,5 @@ cache:
 
 script:
     # Run tests
-    - cd react-frontend && npm run build
+    - cd react-frontend && npm install && npm run build
     - npm test
