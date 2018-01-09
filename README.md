@@ -5,7 +5,7 @@
 
 # Ramverk2 – with react-frontend and express-backend
 
-This repo was made for the course Ramverk2 at Blekinge Tekniska Högskola. It constitutes a me-page, with a chat using websockets.io and database CRUD using Mongodb, as well as use of Docker. It was made by Marcus Gustafsson, and can be run locally by following the instructions below.
+This repo was made for the course Ramverk2 at Blekinge Tekniska Högskola. It constitutes a me-page, with a chat using socket.io and database CRUD using Mongodb, as well as use of Docker. It was made by Marcus Gustafsson, and can be run locally by following the instructions below.
 
 Clone this repo with
 

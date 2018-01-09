@@ -28,8 +28,7 @@ export class Chat extends Component {
             feedback: '',
             shouldHandleKeyPress: true
         };
-        // this.socket = io('localhost:1337');
-        // this.socket = io('localhost:' + 1337);
+
         this.socket = io('localhost:' + PORT);
 
         this.sendMessage = ev => {

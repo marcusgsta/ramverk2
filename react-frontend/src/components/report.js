@@ -151,7 +151,78 @@ const Report = () => (
         <p>Det tog en del tid att felsöka. Det som inte fungerade var min npm run test1-2-3, vilka kör tester i Docker-containers för olika versioner av Node. Efter lite omvägar så fungerar det igen. Jag använder inte kodtäckning, för att undvika att det hänger sig. Jag tog också bort testerna för express-backend, och har nu enbart testerna för react-frontend. Dessutom körs eslint, stylelint och htmllint. Man behöver trycka <em>q</em> för att avsluta react-scripts-tester, eftersom de körs i watch-mode.</p>
 
         <p>Jag fick komplettering i kmom05-04, eftersom redovisa-repot inte gick att köra på rättarens dator. Jag har uppdaterat nu och hoppas det går bättre. Det ska nu gå att välja vilken DBWEBB_PORT man vill köra på. Jag har också förtydligat README. Nu kan man köra npm install och då installeras båda repona front-end och back-end.</p>
+
         <h3>Kmom07-10</h3>
+
+        <p><em>Inledande reflektioner</em></p>
+
+        <p>I mitt slutprojekt har jag vidareutvecklat det jag tidigare har jobbat med, chat, databas och design. Nya vägval jag gjort är att göra om databasen till att hantera användarna. Jag har också implementerat inloggning, och även administrationssidor. Jag delade upp mina tidigare CRUD-sidor, så att en förinställd administratör kan logga in och <em>redigera</em> och <em>radera</em>, medan vanliga användare bara kan lägga till användare.</p>
+
+        <p>Nya tekniker som krävdes var därför JSON Web Token för autenticering, och kryptering med Passport och bcrypt. Dessutom behövde jag forska en del på hur jag skulle införliva detta med React Router.</p>
+
+        <p>Jag delade upp mitt repo från kursmomenten i ett huvudrepo där jag har servern, och ett klientrepo som subrepo till servern. Efter mycket trixande med CI-tjänster särskilt, och med enhetstester i flera mappar, fick jag på så sätt en enklare modell att undehålla. Nackdelen är att jag behöver committa två gånger, till två olika repon på Github, men jag fick mycket färre fel och det blev lättare att jobba med koden.</p>
+
+        <p>Mina repon på Github:</p>
+        <ul><li><a href="https://github.com/marcusgsta/ramverk2-app">Server</a></li></ul>
+        <ul><li><a href="https://github.com/marcusgsta/react-client">Klient</a></li></ul>
+
+        <p><em>Optionella krav</em></p>
+        <p>Jag har genomfört de optionella kraven. </p>
+
+        <p><em>Krav 4 - 10 poäng</em></p>
+        <p>Min README är välskriven och täckande. Här finns en innehållsförteckning för den engelska och en för den svenska delen. Den allmänna delen med setup, install och start har jag skrivit på engelska, eftersom det är det traditionella. Den andra delen innehåller kravbild, artiklar etc. och är på svenska.</p>
+
+        <p><em>Krav 5 - 10 poäng</em></p>
+        <p>Jag har genomfört några alternativ till Krav 5, som enligt det som sades i projektföreläsningen borde uppfylla detta:</p>
+        <p><em>Driftssättning – 5 poäng</em></p>
+        <p>Webbsidan finns i drift på <a href="http://chat-bth.space">chat-bth.space</a>. Mer om detta i <a href="https://github.com/marcusgsta/ramverk2-app/blob/master/README.md#driftssättning">README - Driftssättning</a>.</p>
+
+        <p>Jag har även mycket hög kodkvalitet (10 på Scrutinizer) och någorlunda hög kodtäckning (79% och 28%).</p>
+
+        <p>Reactjs - 5 poäng</p>
+        <p>Jag har använt ramverket Reactjs och tillhörande moduler, och har skrivit en översiktlig artikel om det. <a href="https://github.com/marcusgsta/ramverk2-app/blob/master/README.md#artikel-reactjs">README - Reactjs</a>.</p>
+
+        <p><em>Krav 6 - Teknik, arbetssätt, verktyg, ramverk - 10 poäng</em></p>
+        <p>Som sista optionella krav har jag valt att skriva en artikel om JSON Web Token. <a href="https://github.com/marcusgsta/ramverk2-app/blob/master/README.md#artikel-json-web-token">README - JWT</a></p>
+
+        <p><em>Allmänt om projektet</em></p>
+
+        <p>Projektet innebar lite mer systemarbete än vad jag föreställde mig på grund av Docker, att bitarna ska fungera tillsammans, och när det gäller driftsättning av appen. För att få dessa bitar att fungera behövde jag läsa på och pilla med Apache på Debian Jessie, där jag har min Digital Ocean Droplet. Men det var nyttigt, och också roligt att till sist få det att fungera.</p>
+
+        <p>Att välja Reactjs innebar också mycket merarbete. Jag visste det skulle bli extrajobb, men det blev lite mer än vad jag trodde. Så helt klart en tuff kurs att komma igenom, även om det delvis var mitt eget ansvar, då jag kunde ha reducerat och valt en enklare väg. Samtidigt vill jag ju ha koll på dessa saker, och jag tycker verkligen att jag har lärt mig mycket, även den här gången. </p>
+
+        <p>JSON Web Token var också nytt för mig, och krävde tid att sätta sig in i. Ännu en teknik som känns viktig att ha på sin repertoar.</p>
+
+        <p>I övrigt så föreställde jag mig att jag skulle ha tid att skapa någon funktionalitet utöver det vi hade jobbat med i kursen. Det blev inte riktigt så. Jag har mer vidareutvecklat och förfinat den tidigare chatten, och användningen av databas. Det krävdes tid att få inloggning att fungera, och jag ville få dessa grunder på plats först och främst. </p>
+
+        <p><em>Allmänt om kursen</em></p>
+
+        <p>Kursen heter ramverk2, men här ingår också Docker och Mongodb. Viktiga tekniker att behärska, och kanske bra att ha med i utbildningen. Borde kursen heta något annat, mer täckande? Samtidigt ser jag utbildningen som en helhet, där dessa delar säkert borde ingå. Det har varit så under flera kurser. Jag antar att det handlar om att det är svårt att separera olika delar helt ifrån varandra, och det är ju inte heller någon poäng att göra det. Jag kände inte till Docker innan, och nu när jag har satt mig in i det känns det som något väldigt användbart.</p>
+
+        <p>Som jag skrev tidigare om projektet så har det blivit en del extraarbete med Reactjs, men på ett bra sätt. Det är ju ganska kul också att ge sig in i nya tekniker. Det är egentligen ganska bra att man kan få välja själv, tycker jag. Det blir lite mer osäkert med tanke på tiden det tar, men det har ändå gått att genomföra på ett bra sätt.</p>
+
+        <p>Invändningar: Angående tester, så fanns en bra och bred artikel om tester och om Docker. Kanske jag hade velat läsa någon artikel om hur man testar anrop mot en databas. Jag har gjort en del efterforskningar, men jag släppte det efterhand, och har gjort mer ytliga tester.</p>
+        <p>Jag är nöjd med kursen och ger den 9 av 10. </p>
+
+        <ul>
+            <li>
+                <a href="http://github.com/marcusgsta/ramverk2">Redovisa på github</a></li>
+            <li>
+                <a href="http://github.com/marcusgsta/ramverk2-app">Projektet på github (server)</a></li>
+            <li>
+                <a href="http://github.com/marcusgsta/react-client">Projektet på github (klient)</a>
+            </li>
+            <li>
+                <a href="http://chat-bth.space">Projektet i drift på digital ocean</a>
+            </li>
+            <p>Logga in med admin/admin eller doe/doe. Det går också att skapa sin egen användare</p>
+            <li>
+                <a href="http://student.bth.se/~magi16/dbwebb-kurser/ramverk2/me/redovisa/">Filerna för Redovisa på studentservern</a>
+            </li>
+            <li>
+                <a href="http://student.bth.se/~magi16/dbwebb-kurser/ramverk2/me/kmom10/">Filerna för Projektet på studentservern</a>
+            </li>
+        </ul>
     </div>
 );
 

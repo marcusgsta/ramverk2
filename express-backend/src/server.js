@@ -14,7 +14,7 @@ var PORT;
 
 PORT = process.env.PORT || process.env.DBWEBB_PORT || 1337;
 
-console.log(PORT);
+// console.log(PORT);
 
 // Start up Express server
 console.log("Express is listening on port " + PORT);
